@@ -32,6 +32,7 @@ byte: 字节, 是计算机中最小的存储单位. 1byte = 8bit, bit是一个�
 
 不同的数据类型占据着不同的内存单元: byte(1) < short(2) = char(2) < int(4) = float(4) < long(8) = double(8)
 
+
 > JS中, 默认使用的float类型
 
 引用类型就是除了基本类型外的类型, 比如`String`
