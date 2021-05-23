@@ -59,16 +59,47 @@ System.out.printLn("中间值: " + mid); // ????
 var mid = min + (max - min) / 2;
 ```
 
+### 浮点类型
+
+在JS中, `0.1 + 0.2 = ?`, 由于JS的数值默认为浮点类型. 
+
+那么浮点类型的特点就是**表示范围大, 但无法精确表示**, 浮点数`0.1`由十进制转换为二进制是一个无限循环小数, 导致存储`0.1`的变量真正存储的是一个近似值, 所以**浮点数的运算会产生误差**.
+
+
+可以看一个例子:
+
+```java
+public class Test {
+  public static void main(String[] args) {
+    var a = 1.0 / 10;
+    var b = 1 - 9.0 / 10;
+    System.out.printLn(a);
+    System.out.printLn(b);
+  }
+}
+```
+
+如何解决浮点运算精度损失? **先转换为整数再转换为小数**.
+
+**总结: 产生误差的原因就是十进制转二进制**
+
+> 浮点类型深入参考: https://zhuanlan.zhihu.com/p/131588849
+
 var 关键字: 与JS一样, 都是利用编译器自动推断变量类型
 
-#### 自增/自减
+### 溢出
+
+- NaN: `double d1 = 0.0/0`
+- Infinity: `double d2 = 1.0/0`
+- -Infinity: `double d3 = -1.0/0`
+### 自增/自减
 
 与JS一样的!
 
 - `n++`: 先引用,再加一
 - `++n`: 先加一,再引用
   
-#### 移位运算
+### 移位运算
 
 与JS一样的~
 
@@ -97,3 +128,4 @@ var i = 167776589;
 var n = 167776512;
 System.out.printLn(i & n); // return n; 将两个数转为二进制进行与运算.
 ```
+
