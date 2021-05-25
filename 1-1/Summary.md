@@ -129,3 +129,41 @@ var n = 167776512;
 System.out.printLn(i & n); // return n; 将两个数转为二进制进行与运算.
 ```
 
+### 数组类型
+
+数组特点:
+- 长度不可变
+- 默认值: 整数 = 0, 浮点 = 0.0, 布尔 = false,
+- 一旦超出数组则会报错,
+
+
+```js
+// 初始化数组
+int[] arr = new Int[5];
+// 直接指定初始化元素
+int[] arr1 = new Int[]{1,2,3,4,5};
+// 简写
+int[] arr2 = {1,2,3,4,5};
+// 使用var
+var arr3 = {1,2,3,4,5};
+```
+
+Java的数组与JS数组可是有着差别: **Java属于静态数组, JS属于动态数组**.
+
+不管在Java中还是JS中, 引用类型的对象都是存放在堆中, 也就是说, **所有的变量都是指针**
+
+```js
+//Java
+String[] strs = {"a", "b", "c"};
+String a = strs[0];
+strs[0] = "d";
+System.out.println(a); // "a"
+
+// JS
+var strs = ['a', 'b', 'c'];
+var a = strs[0];
+strs[0] = 'd';
+console.log(a) // 'a'
+```
+
+上述代码中, a的值永远都是一个指针, 这个指针指向数组中的某个元素.
